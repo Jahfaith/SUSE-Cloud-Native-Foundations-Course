@@ -1,0 +1,10 @@
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:app:Main request successful
+INFO:werkzeug:127.0.0.1 - - [14/Jun/2021 09:08:16] "GET / HTTP/1.1" 200 -
+INFO:app:Status request successful
+INFO:werkzeug:127.0.0.1 - - [14/Jun/2021 09:08:23] "GET /status HTTP/1.1" 200 -
+INFO:app:Metrics request successful
+INFO:werkzeug:127.0.0.1 - - [14/Jun/2021 09:08:37] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Jun/2021 09:09:52] "GET /melvitto HTTP/1.1" 404 -
+INFO:app:Status request successful
+INFO:werkzeug:127.0.0.1 - - [14/Jun/2021 09:10:00] "GET /status HTTP/1.1" 200 -
