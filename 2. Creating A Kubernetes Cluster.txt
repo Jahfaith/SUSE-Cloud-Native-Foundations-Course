@@ -3,7 +3,7 @@ Creating a Kubernetes Cluster using vagrant command to install k3s on a Virtual 
 install Virtual Box
 install Vagrant
 
-1. vagrant up
+1. vagrant up, also ensure that your Virtual Machine (in this case Virtual Box) is running in the background.
 
 2. vagrant version -to check for version.
 
