@@ -1,0 +1,31 @@
+Application development.
+Deploying a python application.
+
+1. kubectl get deploy  -To check if there are any deployed resources.
+
+2. kubectl create deploy python-helloworld --image=jahfaith/python-helloworld:v1.0.0  -The name of the app/file is python-helloworld,
+the image is the one you created with docker and can be gotten from your dockerhub.
+
+3. kubectl get deploy -Would likely show 0/1 under READY
+
+4. kubectl get rs -Would show you the state of the rs
+
+5. kubectl get po -Would show you the state of the pods. If STATUS is Running, it means the pods are running but if it shows
+CreateContainerError, do steps 6 & 7.
+
+6. kubectl describe po insert-the-name-of-the-pod -This gives you info about the pod which can be used to correct the problem. In many
+cases, the solution is given in 7 below.
+
+7. 'zypper install -t pattern apparmor' -After installing it, run steps 3, 4, and 5 again and see the difference. Check READY and STATUS.
+
+8. kubectl port-forward po/python-helloworld-5c4b885d8b-tjk7f 6111:6111 -Specify the port that is contained in the application file.
+
+9. 'kubectl edit deploy python-helloworld -o yaml' -Rolling strategy. To edit/update your application.
+
+10. '/image' + Enter will help search for image resource -Side Note.
+
+11. ':wq' + Enter will save changes you make inside a file using the CLI -Side Note. To get ':', press and hold 'SHIFT' + ':'.
+
+12. Ctr + C is used to cancel -Side Note.
+
+13. BRAVO!

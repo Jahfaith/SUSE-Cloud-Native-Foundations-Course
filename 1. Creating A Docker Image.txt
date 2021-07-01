@@ -1,0 +1,53 @@
+Creating a Docker Image for a python file/app.
+Docker is used for packaging applications.
+
+1. 'cd' into desktop, then SUSE1 till you enter python-helloworld folder in the solutions folder,
+
+2. 'ls' to view the items inside the python-helloworld folder,
+
+3. you would find a dockerfile, an app.py file, a requirements.txt file, and a test_with_python.py file
+
+4. 'vi app.py' in order to view the codes in the app.py file,
+
+5. 'vi requirements.txt' or 'cat requirements.txt' to view (the codes in) it,
+
+6. 'vi dockerfile' to view its content.
+
+7. To quit and return to previous view; press 'shift'+':' on your keyboard, then type 'quit' and hit enter,
+
+8. Go to your dockerhub (the docker you installed), create a repo,
+
+9. Go back to GitBash and build a docker image, specifying your repository(the name) and location(put dot to specify current directory)
+	
+	 'docker build -t python-helloworld .' (check the README file cos sometimes -o is used inplace of -t)
+
+10. 'docker images' to view the images in the docker,
+
+11. 'docker run -d -p 5000:5000 python-helloworld' to run the image built on the flask port 5000,
+
+12. 'docker ps' to see all the running containers at the moment,
+
+13. Create a docker tag for your image(python-helloworld) specifying your docker repo(jahfaith/python-helloworld) and a version(v1.0.0)
+
+	'docker tag python-helloworld jahfaith/python-helloworld:v1.0.0'
+
+14.'docker images' to view the result,
+
+15. Push image to dockerhub
+	
+	'docker push jahfaith/python-helloworld:v1.0.0'
+
+16. Access will most likely be denied after the push attempt. So we'd login,
+
+17. 'docker login'
+
+18. If the above command throws an error, use this:
+	
+	'winpty docker login'
+
+19. Enter your username(Docker ID), press enter, and then password, then enter.
+Hurray! You are in and can push your image now to dockerhub.
+
+20. REPEAT STEP 15.
+ 
+21. Congrats!

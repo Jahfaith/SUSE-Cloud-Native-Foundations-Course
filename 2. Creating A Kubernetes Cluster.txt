@@ -1,0 +1,26 @@
+Creating a Kubernetes Cluster using vagrant command to install k3s on a Virtual Machine(Virtual Box)
+
+install Virtual Box
+install Vagrant
+
+1. vagrant up
+
+2. vagrant version -to check for version.
+
+3. vagrant status -to check status.
+
+4. vagrant ssh (provided you are in the directory where the vagrant(newly created) and Vagrantfile are).
+
+5. Now we can install kubernetes cluster using k3s.
+
+6. go to 'k3s.io' on your browser,
+
+7. copy this link 'curl -sfL https://get.k3s.io | sh -' and paste it in the vagrant box that you recently sshed into in your gitbash.
+
+8. sudo su -To get root access.
+
+9. kubectl get no -To view your nodes.
+
+10. CONGRATS!
+
+11. To spin up your kubernetes cluster subsequently, skip steps 5, 6 & 7. 

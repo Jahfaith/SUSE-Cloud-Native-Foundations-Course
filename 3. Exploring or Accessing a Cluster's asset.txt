@@ -1,0 +1,20 @@
+To access a kubernetes cluster, a kubeconfig file is required.
+
+1. spin up your virtual machine using vagrant -'vagrant up'
+
+2a. install a kubernetes cluster using k3s -check previous lesson on deploying kubernetes cluster using vagrant.
+2b. OR Spin up your already created kubernetes cluster.
+
+3. When your kubernetes cluster is up and running -after you have 'sudo su' into the VM,
+
+4. 'vi /etc/rancher/k3s/k3s.yaml' or (vi ~/.kube/config) -to view the kubeconfig file.
+
+5. 'kubectl cluster-info' -To get information about the cluster.
+
+6. 'kubectl get no' -To get all the current nodes within the cluster.
+
+7. OR 'kubectl get no -o wide' -To get a wider range of info.
+
+8. 'kubectl describe no insert-name-of-the-node' -To get a description of the nodes.
+
+9. BIG UPS! 
