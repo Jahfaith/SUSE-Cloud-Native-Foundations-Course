@@ -1,20 +1,35 @@
 Deploying Kubernetes Resources
 
-# create the namespace 
+# create a namespace called 'demo'
 # note: label option is not available with `kubectl create`
 kubectl create ns demo
 
-# label the namespace
+# label the namespace with tier=test.
 kubectl label ns demo tier=test
 
-# create the nginx-alpine deployment 
+# create the nginx-alpine deployment in the demo namespace with nginx:alpine as image and having 3 replica sets. 
 kubectl create deploy nginx-alpine --image=nginx:alpine  --replicas=3 --namespace demo
 
-# label the deployment
+# label the deployment with the following: app=nginx, tag=alpine
 kubectl label deploy nginx-alpine app=nginx tag=alpine --namespace demo
 
-# expose the nginx-alpine deployment, which will create a service
+# expose the nginx-alpine deployment on port 8111, which will create a service
 kubectl expose deployment nginx-alpine --port=8111 --namespace demo
 
 # create a config map
 kubectl create configmap nginx-version --from-literal=version=alpine --namespace demo
+
+# create a namespace called 'demo' that will output a yaml file.
+kubectl create ns demo --dry-run=client -o yaml
+
+# to store the namespace as a manifest file (for the purpose of using a declarative approach),
+kubectl create ns demo --dry-run=client -o yaml > namespace.yaml
+
+# to view the file,
+cat namespace.yaml
+
+# declarative approach to creating resources.
+kubectl apply -f namespace.yaml
+
+# if the manifest is given already, specify the location instead of creating another manifest.
+kubectl apply -f exercises/manifest/
