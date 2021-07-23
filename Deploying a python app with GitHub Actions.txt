@@ -1,0 +1,21 @@
+GitHub Actions
+
+The following folder/directory and files are needed:
+1. create a folder for the project on your local machine eg python-helloworld.
+2. create a repo on github with the same name as the project folder on your local machine.
+3. in the project folder on your local machine, create the following:
+a. mkdir -p .github/workflows (Using GitBash) or .github>>workflows (create the first folder, then create the second folder inside the first folder).
+b. docker-build.yml file in .github/workflows
+c. app.py
+d. requirements.txt
+e. Dockerfile
+
+Once these files are complete,
+1. push the project folder (python-helloworld) consisting of the other folders and files to the github repo you created earlier.
+2. ensure your docker image is running. go to your dockerhub to ensure that.
+3. on your github repo for the project, go to SETTINGS, SECRETS, new-repository-secret -specify your dockerhub username, save it, then specify your password, save it.
+4. make a commit eg edit a readme.
+5. go to Actions (At the top where you have Settings, Repositories, Insight etc) and you will see the Actions running.
+
+5a. If an error is thrown, read the error message and trace the file.
+5b. sometimes, you may need to edit some parameters in your docker-build.yml file.  
